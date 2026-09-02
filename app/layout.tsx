@@ -3,6 +3,7 @@ import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 
 import { SITE_URL } from "@/lib/site";
+import LiquidBackground from "@/components/LiquidBackground";
 
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
@@ -24,7 +25,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
-      <body className="bg-bg font-sans text-fg antialiased">{children}</body>
+      <body className="bg-bg font-sans text-fg antialiased">
+        <LiquidBackground />
+        <div className="relative z-[2]">{children}</div>
+      </body>
     </html>
   );
 }

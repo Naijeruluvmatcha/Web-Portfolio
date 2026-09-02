@@ -18,6 +18,8 @@ Typography is the structure, not decoration. High-energy brutalism meets kinetic
 
 Rules: accent used sparingly but boldly; never plain gray for secondary text (use muted-foreground); no gradients; stay at contrast extremes, avoid mid-tone grays.
 
+**Deliberate exception:** the site-wide ambient liquid-gradient background (`.liquid-wrap`/`.blob*` in `app/globals.css`, mounted via `components/LiquidBackground.tsx`) is an intentional departure from "no gradients." It's a low-opacity, blurred, animated layer behind all content — not a gradient applied to text, borders, or surfaces. Do not "fix" it back to flat as a design-system cleanup; if it needs to change, that's a deliberate design call, not a bug.
+
 **Note on the contrast figures below:** these ratios look right for the hex pairs given, but treat them as estimates to confirm with a contrast checker before launch, not as verified numbers.
 - Foreground on background: ~15:1 (I believe this clears WCAG AAA, but verify)
 - Accent on background: ~12:1
@@ -94,7 +96,7 @@ Base unit: 4px (Tailwind default scale).
 - [ ] 0px radius, 2px zinc-700 borders, no shadows anywhere
 
 ## Anti-Patterns to Avoid
-- Pure black/white, pastels, mid-tones, gradients, multiple accent colors
+- Pure black/white, pastels, mid-tones, gradients (except the deliberate liquid-background exception noted above), multiple accent colors
 - Serif/script fonts, mixed case in display text, normal/wide tracking on large text
 - Center-aligned body text, small max-widths, standard `py-16` section padding
 - Drop shadows, slow transitions (800ms+), pausing marquees, small/subtle buttons

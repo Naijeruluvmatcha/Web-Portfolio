@@ -26,3 +26,89 @@ body {
   background: var(--color-bg);
   color: var(--color-fg);
 }
+
+/* Liquid-gradient ambient background — deliberate exception to the
+   "no gradients" rule, see DESIGN-SYSTEM.md. Fixed to the viewport so
+   it reads as one continuous layer behind the whole page, not a
+   per-section effect. */
+.liquid-wrap {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  overflow: hidden;
+  pointer-events: none;
+  /* Contains mix-blend-mode to this layer only, so blobs can never
+     blend with or bleed into accent-yellow surfaces painted above. */
+  isolation: isolate;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(70px);
+  opacity: 0.35;
+  mix-blend-mode: screen;
+}
+
+.blob-a {
+  width: 46vw;
+  height: 46vw;
+  background: var(--color-muted-fg);
+  top: -10%;
+  left: -10%;
+  animation: driftA 20s ease-in-out infinite;
+}
+
+.blob-b {
+  width: 38vw;
+  height: 38vw;
+  background: #4a4a52;
+  bottom: -15%;
+  right: -5%;
+  animation: driftB 24s ease-in-out infinite;
+}
+
+.blob-c {
+  width: 28vw;
+  height: 28vw;
+  background: var(--color-muted-fg);
+  top: 30%;
+  right: 20%;
+  animation: driftC 16s ease-in-out infinite;
+}
+
+@keyframes driftA {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(6vw, 8vh) scale(1.1);
+  }
+}
+
+@keyframes driftB {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-7vw, -6vh) scale(1.08);
+  }
+}
+
+@keyframes driftC {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(-5vw, 5vh) scale(0.95);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blob {
+    animation: none;
+  }
+}

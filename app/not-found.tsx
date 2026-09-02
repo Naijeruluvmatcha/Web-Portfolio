@@ -10,7 +10,7 @@ export default function NotFound() {
         Not Found
       </h1>
       <p className="mt-6 max-w-[40ch] text-[clamp(1rem,2vw,1.2rem)] font-semibold leading-relaxed text-muted-fg">
-        The page you're looking for doesn't exist or has moved.
+        The page you&apos;re looking for doesn&apos;t exist or has moved.
       </p>
       <Link
         href="/"
