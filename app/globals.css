@@ -56,7 +56,7 @@ body {
   background: var(--color-muted-fg);
   top: -10%;
   left: -10%;
-  animation: driftA 20s ease-in-out infinite;
+  animation: driftA 7s ease-in-out infinite;
 }
 
 .blob-b {
@@ -65,7 +65,7 @@ body {
   background: #4a4a52;
   bottom: -15%;
   right: -5%;
-  animation: driftB 24s ease-in-out infinite;
+  animation: driftB 8s ease-in-out infinite;
 }
 
 .blob-c {
@@ -74,7 +74,7 @@ body {
   background: var(--color-muted-fg);
   top: 30%;
   right: 20%;
-  animation: driftC 16s ease-in-out infinite;
+  animation: driftC 5s ease-in-out infinite;
 }
 
 @keyframes driftA {
