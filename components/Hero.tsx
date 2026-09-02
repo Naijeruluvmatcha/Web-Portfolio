@@ -100,13 +100,13 @@ export default function Hero() {
         <div className="mt-5 text-xs font-bold uppercase tracking-[0.15em] text-accent">
           Cloud Engineering · Kuala Lumpur
         </div>
-        <h1 className="mt-4 text-[clamp(2.2rem,11vw,3.2rem)] font-bold uppercase leading-[0.9] tracking-[-0.02em]">
+        <p className="mt-4 text-[clamp(2.2rem,11vw,3.2rem)] font-bold uppercase leading-[0.9] tracking-[-0.02em]">
           <AnimatedGradientText speed={2} colorFrom="#DFE104" colorTo="#FAFAFA">
             Nigel Kok
             <br />
             Jia Wei
           </AnimatedGradientText>
-        </h1>
+        </p>
         <p className="mt-4 max-w-[38ch] text-[1rem] font-semibold leading-relaxed text-fg">
           Cloud Engineering undergraduate building resilient, automated
           infrastructure. Currently based in Kuala Lumpur, open to relocate.

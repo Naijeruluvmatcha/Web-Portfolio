@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./globals.css";
 
+import { SITE_URL } from "@/lib/site";
+
 const spaceGrotesk = Space_Grotesk({
   variable: "--font-space-grotesk",
   subsets: ["latin"],
@@ -13,6 +15,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Nigel Kok — Portfolio",
   description:
     "Cloud Engineering undergraduate building resilient, automated infrastructure. Based in Kuala Lumpur.",
