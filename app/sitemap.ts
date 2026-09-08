@@ -4,6 +4,8 @@ import { SITE_URL } from "@/lib/site";
 
 const SECTIONS = ["about", "projects", "skills", "certifications", "contact"];
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
