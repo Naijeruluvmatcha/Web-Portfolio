@@ -1,36 +1,48 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Nigel Kok — Personal Portfolio
 
-## Getting Started
+Hi, I'm Nigel — a Cloud Engineering student at Asia Pacific University, based in Kuala Lumpur. This is my personal portfolio site, built to actually showcase what I've worked on rather than just list it.
 
-First, run the development server:
+**🔗 Live site:** https://d2t0v93771gi8b.cloudfront.net
+
+## What this is
+
+A single-page portfolio covering my projects, skills, and certifications, styled around a bold "Kinetic Typography" design — high-contrast, motion-driven, brutalist-inspired. I wanted it to look like nobody else's portfolio, not another dark-mode template.
+
+Full design reasoning is in [`DESIGN-SYSTEM.md`](./DESIGN-SYSTEM.md), and the original project scope is in [`REQUIREMENTS.md`](./REQUIREMENTS.md), if you're curious how this was planned before any code was written.
+
+## What I built it with
+
+- **Next.js** (App Router) — React framework
+- **TypeScript**
+- **Tailwind CSS** — styling
+- **Framer Motion** + **react-fast-marquee** — the scroll animations and moving marquee strips
+
+## How it's actually deployed
+
+This isn't hosted on a one-click platform — it's real infrastructure I provisioned myself:
+
+**S3 (storage) + CloudFront (CDN) on AWS, provisioned with Terraform.**
+
+The full reasoning — why S3+CloudFront over something simpler, why the bucket is locked down and private, why Terraform instead of clicking through the console — is written up in [`DEPLOYMENT.md`](./DEPLOYMENT.md).
+
+## Running it locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Project structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+app/            — pages, layout, metadata (robots.txt, sitemap, OG image)
+components/     — Hero, About, Projects, Skills, Certifications, Contact
+public/         — images, certificates, resume
+terraform/      — the actual infrastructure-as-code for the AWS deployment
+```
 
-## Learn More
+## License
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+MIT — see [`LICENSE`](./LICENSE).
