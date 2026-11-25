@@ -3,7 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "content": "node scripts/content-to-js.mjs",
+    "predev": "node scripts/content-to-js.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/content-to-js.mjs",
     "build": "next build",
     "start": "next start",
     "lint": "eslint"

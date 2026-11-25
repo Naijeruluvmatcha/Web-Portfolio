@@ -44,3 +44,10 @@ next-env.d.ts
 terraform/.terraform/
 *.tfstate
 *.tfstate.*
+
+# made by scripts/content-to-js.mjs on every build
+/public/pagoda/content.js
+/public/pagoda/img/c-*
+
+# made by terraform when it packs the lambda
+/terraform/lambda/*.zip

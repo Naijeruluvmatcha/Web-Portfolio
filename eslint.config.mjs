@@ -12,6 +12,8 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // The pagoda is a plain browser script, not part of the React code:
+    "public/pagoda/**",
   ]),
 ]);
 
