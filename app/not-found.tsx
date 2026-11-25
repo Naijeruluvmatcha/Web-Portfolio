@@ -2,22 +2,30 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <section className="flex min-h-[80vh] flex-col items-center justify-center border-b-2 border-border px-[5vw] py-24 text-center">
-      <div className="text-sm font-bold uppercase tracking-[0.15em] text-accent">
-        Error 404
-      </div>
-      <h1 className="mt-6 text-[clamp(3rem,14vw,8rem)] font-bold uppercase leading-[0.85] tracking-[-0.03em]">
-        Not Found
-      </h1>
-      <p className="mt-6 max-w-[40ch] text-[clamp(1rem,2vw,1.2rem)] font-semibold leading-relaxed text-muted-fg">
-        The page you&apos;re looking for doesn&apos;t exist or has moved.
+    <main
+      style={{
+        minHeight: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: 18,
+        padding: "0 24px",
+        textAlign: "center",
+        position: "relative",
+        zIndex: 3,
+      }}
+    >
+      <p style={{ font: "500 13px var(--mono)", letterSpacing: ".15em", color: "var(--accent)", margin: 0 }}>
+        ERROR 404
       </p>
-      <Link
-        href="/"
-        className="mt-10 border-2 border-accent bg-accent px-8 py-4 text-center text-sm font-bold uppercase tracking-wide text-accent-fg no-underline transition-transform duration-200 ease-in-out motion-safe:hover:scale-105 motion-safe:active:scale-95"
-      >
-        Back to Homepage
+      <h1 style={{ font: "700 clamp(40px, 10vw, 88px)/1 var(--mono)", margin: 0 }}>Wrong door.</h1>
+      <p style={{ maxWidth: "40ch", margin: 0, color: "var(--muted)" }}>
+        This page doesn&apos;t exist or has moved.
+      </p>
+      <Link href="/" className="btn">
+        Back to the pagoda
       </Link>
-    </section>
+    </main>
   );
 }
